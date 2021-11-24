@@ -80,8 +80,8 @@ pipeline {
               credentialsId: "${CFN_CREDENTIALS_ID}",
               accessKeyVariable: 'AWS_ACCESS_KEY_ID',
               secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                sh 'sed -i 's/\${ENVIRONMENT}/params.ENVIRONMENT/g' stack-params.yml'
-                sh 'sed -i 's/\${BUILD_NUMBER}/env.BUILD_NUMBER/g' stack-params.yml'
+                sh "sed -i 's/\${ENVIRONMENT}/"${params.ENVIRONMENT}"/g' stack-params.yml"
+                sh "sed -i 's/\${BUILD_NUMBER}/"${env.BUILD_NUMBER}"/g' stack-params.yml"
                 sh 'configuration/jenkins/scripts/deploy-stack.sh ${STACK_NAME} ${PARAMETERS_FILE_NAME} ${TEMPLATE_NAME} ${REGION}'
             }
           }
