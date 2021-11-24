@@ -22,3 +22,10 @@
 
 **Run complete application in local docker environment:**
 - Use `start_application.sh` / `stop_application.sh` from discovery microservice
+
+
+**Push docker image to ECR:**
+- aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/k7s0v3p5
+- docker build -t course-api-gateway:0.0.1 .
+- docker tag course-api-gateway:0.0.1 public.ecr.aws/k7s0v3p5/course-api-gateway:0.0.1
+- docker push public.ecr.aws/k7s0v3p5/course-api-gateway:0.0.1

@@ -1,0 +1,19 @@
+---
+- ParameterKey: VpcId
+  ParameterValue: vpc-d7e828bd
+  UsePreviousValue: false
+- ParameterKey: VpcPublicSubnetAId
+  ParameterValue: subnet-5c51bb10
+  UsePreviousValue: false
+- ParameterKey: VpcPublicSubnetBId
+  ParameterValue: subnet-c241e9a8
+  UsePreviousValue: false
+- ParameterKey: EcsClusterStack
+  ParameterValue: course-ecs-cluster
+  UsePreviousValue: false
+- ParameterKey: Image
+  ParameterValue: public.ecr.aws/k7s0v3p5/course-api-gateway:${BUILD_NUMBER}
+  UsePreviousValue: false
+- ParameterKey: Environment
+  ParameterValue: ${ENVIRONMENT}
+  UsePreviousValue: false
